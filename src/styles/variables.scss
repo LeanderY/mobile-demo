@@ -1,0 +1,26 @@
+$red: #fc4482;
+$yellow: #ffd300;
+$blue: #5b7492;
+$gray: #616466;
+
+@mixin border-1px($color) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: $color;
+    content: '';
+    transform: scaleY(0.5);
+  }
+}
+
+@mixin border-none() {
+  &:after {
+    display: none;
+  }
+}
+

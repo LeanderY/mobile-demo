@@ -1,0 +1,52 @@
+@mixin theme($color) {
+  .header {
+    .iconfont {
+      color: $color;
+    }
+  }
+  .list {
+    .list-time {
+      background-color: $color;
+    }
+  }
+  .swiper-slide {
+    h3:before {
+      border: 2px solid $color;
+    }
+  }
+  .circle i {
+    color: $color;
+  }
+  .nav-wrapper {
+    > div {
+      &.active {
+        color: $color;
+      }
+    }
+  }
+}
+
+// 黄色主题
+.orange {
+  @include theme(#ffd300);
+}
+
+//蓝色主题
+.blue {
+  @include theme(#00b0f0);
+}
+
+// 绿色主题
+.green {
+  @include theme(#18c2a9);
+}
+
+// 粉色主题
+.pink {
+  @include theme(#f39894);
+}
+
+// 青蓝色主题
+.cyan {
+  @include theme(#26b6be);
+}
