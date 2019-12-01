@@ -3,6 +3,7 @@ const { SkeletonPlugin } = require('page-skeleton-webpack-plugin')
 const path = require('path')
 
 module.exports = {
+  publicPath: '/mobile-demo/',
   devServer: {
     open: true,
     overlay: {
