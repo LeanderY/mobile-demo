@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - lts/*
+branches:
+  only:
+  - master    # 构建的分支
+cache:
+  directories:
+  - node_modules # 依赖缓存的目录
+script:
+  - npm run build
+deploy: # 发布阶段
+  provider: pages # 解析支持者为 github pages
+  keep-history: true # 禁止 travis 对你的 github 项目强制推送
+  skip-cleanup: true # 必须打开，如果在 travis 构建期间你正在推代码，很可能会误删掉你最新的上传代码
+  local-dir: dist # 项目打包后生成的文件的目录
+  github-token: $GH_TOKEN # 在 travis 的环境变量获取授权码，表示 travis 有权对 github 的项目进行拉取推送操作
+  target-branch: gh-pages
+  on:
+    barnch: master # 项目源码所在的分支

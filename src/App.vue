@@ -53,17 +53,19 @@ export default {
   left: 0;
   top: 0;
 }
+// 分类 -> 首页 slide-right
 .slide-right-enter {
-  transform: translateX(-100%); // 组件app-view激活，从左向右显示
+  transform: translateX(-100%); // 1.enter: app-view(active)  2.initStatus: translateX(-100%)(left) 3.showing: translateX(-100%)  ——> translateX(0) left ——> 0
 }
 .slide-right-leave-active {
-  transform: translateX(100%); // 组件category激活，从左向右淡出
+  transform: translateX(100%); // 1.enter: category(active)  2.initStatus: translateX(0) 3.showing: translateX(0)  ——> translateX(100%) 0 ——> right
 }
+ // 首页 -> 分类 slide-left
 .slide-left-enter {
-  transform: translateX(100%); // 组件category激活，从右向左显示
+  transform: translateX(100%); // 1.enter: category(active)  2.initStatus: translateX(100%)(right) 3.showing: translateX(100%)  ——> translateX(0) right ——> 0
 }
 .slide-left-leave-active {
-  transform: translateX(-100%); // 组件app-view激活，从右向左淡出
+  transform: translateX(-100%); // 1.leave-active: app-view(active) 2.initStatus: translateX(0)  3.showing: translateX(0)  ——> translateX(-100%)(0 ——> left)
 }
 
 .app-view {
