@@ -48,6 +48,7 @@ const routes = [
 
 const router = new Router({
   mode: 'history',
+  base: '/mobile-demo/',
   linkActiveClass: 'active',
   routes
 })
